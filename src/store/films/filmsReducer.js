@@ -37,7 +37,7 @@ export const filmsReducer = (state = initialState, action) => {
     //   nominate films
     case NOMINATE_FILM:
       const filteredFilms = state.searchResults.filter(
-        (film) => film.imdbID != action.payload.imdbID
+        (film) => film.imdbID !== action.payload.imdbID
       );
       return {
         ...state,

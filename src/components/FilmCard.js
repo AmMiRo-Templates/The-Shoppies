@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { nominateFilm } from "../store/films/filmsActions";
+import { nominateFilm, removeNomination } from "../store/films/filmsActions";
 
 function FilmCard({ film }) {
   const dispatch = useDispatch();
@@ -9,11 +9,23 @@ function FilmCard({ film }) {
     dispatch(nominateFilm(nominatedFilm));
   };
 
+  const handleRemoveNomination = (filmId) => {
+    dispatch(removeNomination(filmId));
+  };
+
   return (
     <div>
       <img src={film.Poster} alt={`Poster for ${film.Title}`} />
       <h3>{film.Title}</h3>
-      <button onClick={() => handleNomination(film)}>nominate this film</button>
+      {film.Nominated === false ? (
+        <button onClick={() => handleNomination(film)}>
+          nominate this film
+        </button>
+      ) : (
+        <button onClick={() => handleRemoveNomination(film.imdbID)}>
+          remove from nominations
+        </button>
+      )}
     </div>
   );
 }

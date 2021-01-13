@@ -11,8 +11,12 @@ export const getFilms = (title) => async (dispatch) => {
     const res = await axios.get(
       `http://www.omdbapi.com/?s=${title}&type=movie&page=5&apikey=7afcb2e0`
     );
-    console.log(res.data.Search);
-    dispatch({ type: SEARCHING_FILMS_SUCCESS, payload: res.data.Search });
+
+    const formattedResponse = res.data.Search.map(
+      (film) => (film = { ...film, Nominated: false })
+    );
+
+    dispatch({ type: SEARCHING_FILMS_SUCCESS, payload: formattedResponse });
   } catch (err) {
     dispatch({ type: SEARCHING_FILMS_FAILURE, payload: err });
   }
@@ -21,6 +25,7 @@ export const getFilms = (title) => async (dispatch) => {
 // nominate film
 export const NOMINATE_FILM = "NOMINATE_FILM";
 export const nominateFilm = (film) => (dispatch) => {
+  film.Nominated = true;
   dispatch({ type: NOMINATE_FILM, payload: film });
 };
 
