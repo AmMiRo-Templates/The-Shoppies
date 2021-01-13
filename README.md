@@ -56,6 +56,6 @@ LESS was used as the language extension for CSS. For more information check out 
 #### To watch for changes and automatically compile changes into index.css:
 
 1. Open your terminal and verify that LESS is installed correctly and running by running `lessc -v` in your terminal.
-2. In your terminal navigate to the styles folder (`portfolio/src/styles`).
+2. In your terminal navigate to the styles folder (`app/src/styles`).
 3. Run `less-watch-compiler less css index.less` in your terminal.
 4. Verify your compiler is working correctly by making a change in the index.less file then check to ensure the corresponding change is in the index.css file.
