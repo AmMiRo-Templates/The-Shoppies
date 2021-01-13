@@ -1,5 +1,6 @@
 import {
   NOMINATE_FILM,
+  REMOVE_NOMINATION,
   SEARCHING_FILMS_FAILURE,
   SEARCHING_FILMS_START,
   SEARCHING_FILMS_SUCCESS,
@@ -23,7 +24,7 @@ export const filmsReducer = (state = initialState, action) => {
     case SEARCHING_FILMS_SUCCESS:
       return {
         ...state,
-        searchResults: [action.payload],
+        searchResults: [...action.payload],
         isSearching: false,
       };
     case SEARCHING_FILMS_FAILURE:
@@ -35,12 +36,13 @@ export const filmsReducer = (state = initialState, action) => {
 
     //   nominate films
     case NOMINATE_FILM:
+      const filteredFilms = state.searchResults.filter(
+        (film) => film.imdbID != action.payload.imdbID
+      );
       return {
         ...state,
-        searchResults: state.searchResults.filter(
-          (film) => film.id !== action.payload.id
-        ),
-        nominatedFilms: [...state.nominatedFilms, payload],
+        searchResults: [...filteredFilms],
+        nominatedFilms: [...state.nominatedFilms, action.payload],
       };
 
     // remove nomination
@@ -48,8 +50,12 @@ export const filmsReducer = (state = initialState, action) => {
       return {
         ...state,
         nominatedFilms: state.nominatedFilms.filter(
-          (film) => film.id !== action.payload
+          (film) => film.imdbID !== action.payload
         ),
       };
+
+    //   default
+    default:
+      return state;
   }
 };

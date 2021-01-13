@@ -9,9 +9,10 @@ export const getFilms = (title) => async (dispatch) => {
 
   try {
     const res = await axios.get(
-      `http://www.omdbapi.com/?t=${title}&apikey=7afcb2e0`
+      `http://www.omdbapi.com/?s=${title}&type=movie&page=5&apikey=7afcb2e0`
     );
-    dispatch({ type: SEARCHING_FILMS_SUCCESS, payload: res.data });
+    console.log(res.data.Search);
+    dispatch({ type: SEARCHING_FILMS_SUCCESS, payload: res.data.Search });
   } catch (err) {
     dispatch({ type: SEARCHING_FILMS_FAILURE, payload: err });
   }
