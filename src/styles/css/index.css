@@ -169,6 +169,10 @@ a {
   height: 85vh;
   overflow: auto;
 }
+.content-wrapper .left-content .notification {
+  margin: auto;
+  padding: 2rem;
+}
 .header-wrapper {
   display: flex;
   flex-wrap: nowrap;

@@ -10,6 +10,8 @@ const initialState = {
   isSearching: false,
   searchResults: [],
   nominatedFilms: [],
+  nominationsComplete: false,
+  maxNominations: 5,
   error: null,
 };
 
@@ -43,6 +45,10 @@ export const filmsReducer = (state = initialState, action) => {
         ...state,
         searchResults: [...filteredFilms],
         nominatedFilms: [...state.nominatedFilms, action.payload],
+        nominationsComplete:
+          state.nominatedFilms.length + 1 === state.maxNominations
+            ? true
+            : false,
       };
 
     // remove nomination
@@ -52,6 +58,8 @@ export const filmsReducer = (state = initialState, action) => {
         nominatedFilms: state.nominatedFilms.filter(
           (film) => film.imdbID !== action.payload
         ),
+        nominationsComplete:
+          state.nominatedFilms.length - 1 < state.maxNominations ? false : true,
       };
 
     //   default

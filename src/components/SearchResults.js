@@ -5,8 +5,6 @@ import FilmCard from "./FilmCard";
 function SearchResults() {
   const searchResults = useSelector((state) => state.searchResults);
 
-  console.log(searchResults);
-
   return (
     <div className="film-list-wrapper">
       <p>Search Results</p>
