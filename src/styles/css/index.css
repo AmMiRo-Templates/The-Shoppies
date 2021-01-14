@@ -133,6 +133,237 @@ html {
   font-size: 62.5%;
   scroll-behavior: smooth;
 }
+body {
+  font-family: "Roboto", "sans-serif";
+}
+h1 {
+  font-size: 4.8rem;
+}
+h2 {
+  font-size: 3.2rem;
+}
+h3 {
+  font-size: 2.8rem;
+}
+p {
+  font-size: 1.6rem;
+}
+a {
+  font-size: 1.6rem;
+}
+.content-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.content-wrapper .left-content {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 50%;
+  height: 85vh;
+  overflow: auto;
+}
+.header-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #dcd0c0;
+  height: 10vh;
+}
+.header-wrapper h1 {
+  color: #333;
+  padding: 1.5rem;
+}
+.searchForm-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.searchForm-wrapper form {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1rem;
+}
+.searchForm-wrapper form .input-container {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-aroud;
+  align-items: center;
+}
+.searchForm-wrapper form .input-container label {
+  font-size: 2.4rem;
+  color: #333;
+  margin: 0.5rem;
+}
+.searchForm-wrapper form .input-container input {
+  border-radius: 7.5px;
+  background-color: #dcd0c0;
+  font-family: "Roboto", "sans-serif";
+  color: #333;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  box-shadow: inset 0px 2px 3px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(255, 255, 255, 0.025);
+  border: none;
+  margin: 5px;
+  padding: 10px;
+}
+.searchForm-wrapper form .input-container input:focus {
+  outline: none;
+}
+.searchForm-wrapper form button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #a68655;
+  color: #333;
+  text-decoration: none;
+  width: 10rem;
+  min-width: 10rem;
+  height: 4rem;
+  min-height: 4rem;
+  border-radius: 2.5em;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: -6px -6px 10px rgba(200, 200, 200, 0.4), 6px 6px 10px rgba(0, 0, 0, 0.1);
+}
+.searchForm-wrapper form button:hover {
+  opacity: 0.9;
+  box-shadow: -6px -6px 10px rgba(200, 200, 200, 0.4), 6px 6px 10px rgba(0, 0, 0, 0.2);
+}
+.searchForm-wrapper form button:active {
+  opacity: 1;
+  box-shadow: inset -4px -4px 8px rgba(200, 200, 200, 0.2), inset 8px 8px 16px rgba(0, 0, 0, 0.1);
+}
+.searchForm-wrapper form button:focus {
+  outline: none;
+}
+.film-list-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.film-list-wrapper p {
+  font-size: 2.4rem;
+  color: #333;
+  text-align: center;
+  margin: 2rem;
+}
+.film-list-wrapper .films-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: auto;
+}
+.nominatedFilms-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #a68655;
+  width: 50%;
+  min-height: 85vh;
+}
+.nominatedFilms-wrapper p {
+  font-size: 2.4rem;
+  color: #333;
+  text-align: center;
+  margin: 2rem;
+}
+.nominatedFilms-wrapper .films-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: auto;
+  overflow: auto;
+}
+.filmCard-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 8rem;
+  width: 50rem;
+  background-color: #dcd0c0;
+  margin: 1rem;
+  border-radius: 0 5em 5em 0;
+}
+.filmCard-wrapper img {
+  max-height: 100%;
+  margin-right: 2rem;
+}
+.filmCard-wrapper h3 {
+  font-size: 1.6rem;
+  color: #333;
+  text-align: center;
+}
+.filmCard-wrapper button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  color: #333;
+  text-decoration: none;
+  width: 3rem;
+  min-width: 3rem;
+  height: 3rem;
+  min-height: 3rem;
+  border-radius: 2.5em;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: -6px -6px 10px rgba(200, 200, 200, 0.4), 6px 6px 10px rgba(0, 0, 0, 0.1);
+  margin: 2rem;
+}
+.filmCard-wrapper button:hover {
+  opacity: 0.9;
+  box-shadow: -6px -6px 10px rgba(200, 200, 200, 0.4), 6px 6px 10px rgba(0, 0, 0, 0.2);
+}
+.filmCard-wrapper button:active {
+  opacity: 1;
+  box-shadow: inset -4px -4px 8px rgba(200, 200, 200, 0.2), inset 8px 8px 16px rgba(0, 0, 0, 0.1);
+}
+.filmCard-wrapper button:focus {
+  outline: none;
+}
+.footer-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #dcd0c0;
+  height: 5vh;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  color: #333;
+}
 /*!
  * Font Awesome Free 5.14.0 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)

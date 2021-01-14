@@ -8,11 +8,13 @@ function SearchResults() {
   console.log(searchResults);
 
   return (
-    <div>
+    <div className="film-list-wrapper">
       <p>Search Results</p>
-      {searchResults.map((film) => {
-        return <FilmCard film={film} key={film.imdbID} />;
-      })}
+      <div className="films-container">
+        {searchResults.map((film) => {
+          return <FilmCard film={film} key={film.imdbID} />;
+        })}
+      </div>
     </div>
   );
 }

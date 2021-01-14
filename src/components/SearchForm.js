@@ -18,17 +18,19 @@ function SearchForm() {
   };
 
   return (
-    <div>
+    <div className="searchForm-wrapper">
       <form onSubmit={submitSearch}>
-        <label htmlFor="filmTitle">Film Title:</label>
-        <input
-          id="filmTitle"
-          type="text"
-          placeholder="enter film title here"
-          name="filmTitle"
-          value={filmTitle}
-          onChange={handleChanges}
-        />
+        <div className="input-container">
+          <label htmlFor="filmTitle">Search Film by Title:</label>
+          <input
+            id="filmTitle"
+            type="text"
+            placeholder="enter film title here"
+            name="filmTitle"
+            value={filmTitle}
+            onChange={handleChanges}
+          />
+        </div>
         <button type="submit">Search</button>
       </form>
     </div>

@@ -9,9 +9,14 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <SearchForm />
-      <SearchResults />
-      <NominatedFilms />
+      <div className="content-wrapper">
+        <div className="left-content">
+          <SearchForm />
+          <SearchResults />
+        </div>
+        <NominatedFilms />
+      </div>
+
       <Footer />
     </div>
   );

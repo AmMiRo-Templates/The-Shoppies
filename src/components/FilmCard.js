@@ -14,17 +14,14 @@ function FilmCard({ film }) {
   };
 
   return (
-    <div>
+    <div className="filmCard-wrapper">
       <img src={film.Poster} alt={`Poster for ${film.Title}`} />
       <h3>{film.Title}</h3>
+      {/* displays appropriate button if/not nominated */}
       {film.Nominated === false ? (
-        <button onClick={() => handleNomination(film)}>
-          nominate this film
-        </button>
+        <button onClick={() => handleNomination(film)}>+</button>
       ) : (
-        <button onClick={() => handleRemoveNomination(film.imdbID)}>
-          remove from nominations
-        </button>
+        <button onClick={() => handleRemoveNomination(film.imdbID)}>-</button>
       )}
     </div>
   );

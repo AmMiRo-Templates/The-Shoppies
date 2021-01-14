@@ -1,0 +1,24 @@
+.filmCard-wrapper {
+  .flexbox(nowrap, row, space-between, center);
+  height: 8rem;
+  width: 50rem;
+  background-color: @secondary-light;
+  margin: 1rem;
+  border-radius: 0 5em 5em 0;
+
+  img {
+    max-height: 100%;
+    margin-right: 2rem;
+  } // closes img
+
+  h3 {
+    font-size: 1.6rem;
+    color: @dark-text;
+    text-align: center;
+  } // closes h3
+
+  button {
+    .buttons(@white, @dark-text, 3rem, 3rem);
+    margin: 2rem;
+  } // closes button
+} // closes filmCard-wrapper

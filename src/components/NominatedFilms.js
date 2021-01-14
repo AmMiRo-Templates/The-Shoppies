@@ -6,11 +6,13 @@ function NominatedFilms() {
   const nominatedFilms = useSelector((state) => state.nominatedFilms);
 
   return (
-    <div>
-      <p>Nominated Films</p>
-      {nominatedFilms.map((film) => {
-        return <FilmCard film={film} key={film.imdbID} />;
-      })}
+    <div className="nominatedFilms-wrapper">
+      <p>Your Nominations</p>
+      <div className="films-list">
+        {nominatedFilms.map((film) => {
+          return <FilmCard film={film} key={film.imdbID} />;
+        })}
+      </div>
     </div>
   );
 }
