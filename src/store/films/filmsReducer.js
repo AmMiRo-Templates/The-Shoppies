@@ -4,11 +4,13 @@ import {
   SEARCHING_FILMS_FAILURE,
   SEARCHING_FILMS_START,
   SEARCHING_FILMS_SUCCESS,
+  SEARCHING_FILMS_TITLE_ERROR,
 } from "./filmsActions";
 
 const initialState = {
   isSearching: false,
   searchResults: [],
+  searchError: null,
   nominatedFilms: [],
   nominationsComplete: false,
   maxNominations: 5,
@@ -28,11 +30,19 @@ export const filmsReducer = (state = initialState, action) => {
         ...state,
         searchResults: [...action.payload],
         isSearching: false,
+        searchError: null,
       };
     case SEARCHING_FILMS_FAILURE:
       return {
         ...state,
         error: action.payload,
+        isSearching: false,
+      };
+    case SEARCHING_FILMS_TITLE_ERROR:
+      return {
+        ...state,
+        searchResults: [],
+        searchError: action.payload,
         isSearching: false,
       };
 

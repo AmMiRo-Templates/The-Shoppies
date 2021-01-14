@@ -4,6 +4,7 @@ import axios from "axios";
 export const SEARCHING_FILMS_START = "SEARCHING_FILMS_START";
 export const SEARCHING_FILMS_SUCCESS = "SEARCHING_FILMS_SUCCESS";
 export const SEARCHING_FILMS_FAILURE = "SEARCHING_FILMS_FAILURE";
+export const SEARCHING_FILMS_TITLE_ERROR = "SEARCHING_FILMS_TITLE_ERROR";
 export const getFilms = (title) => async (dispatch) => {
   dispatch({ type: SEARCHING_FILMS_START });
 
@@ -12,11 +13,18 @@ export const getFilms = (title) => async (dispatch) => {
       `http://www.omdbapi.com/?s=${title}&type=movie&page=5&apikey=7afcb2e0`
     );
 
-    const formattedResponse = res.data.Search.map(
-      (film) => (film = { ...film, Nominated: false })
-    );
+    console.log("response", res.data);
 
-    dispatch({ type: SEARCHING_FILMS_SUCCESS, payload: formattedResponse });
+    if (res.data.Response === "True") {
+      const formattedResponse = res.data.Search.map(
+        (film) => (film = { ...film, Nominated: false })
+      );
+
+      dispatch({ type: SEARCHING_FILMS_SUCCESS, payload: formattedResponse });
+    } else if (res.data.Response === "False") {
+      console.log("returned error", res.data.Error);
+      dispatch({ type: SEARCHING_FILMS_TITLE_ERROR, payload: res.data.Error });
+    }
   } catch (err) {
     dispatch({ type: SEARCHING_FILMS_FAILURE, payload: err });
   }

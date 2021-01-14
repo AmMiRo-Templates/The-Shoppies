@@ -13,7 +13,9 @@ function SearchForm() {
 
   const submitSearch = (e) => {
     e.preventDefault();
-    dispatch(getFilms(filmTitle));
+    if (filmTitle.length > 0) {
+      dispatch(getFilms(filmTitle));
+    }
     setFilmTitle("");
   };
 
