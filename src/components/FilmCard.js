@@ -7,6 +7,7 @@ function FilmCard({ film }) {
   const nominatedFilms = useSelector((state) => state.nominatedFilms);
 
   const handleNomination = (nominatedFilm) => {
+    nominatedFilm.Nominated = true;
     const filteredNominations = nominatedFilms.filter(
       (filmFromList) => filmFromList.imdbID !== nominatedFilm.imdbID
     );

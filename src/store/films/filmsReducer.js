@@ -27,9 +27,14 @@ export const filmsReducer = (state = initialState, action) => {
         isSearching: true,
       };
     case SEARCHING_FILMS_SUCCESS:
+      const nomineeIds = new Set();
+      state.nominatedFilms.forEach((film) => nomineeIds.add(film.imdbID));
+      const filteredPayload = action.payload.filter(
+        (film) => !nomineeIds.has(film.imdbID)
+      );
       return {
         ...state,
-        searchResults: [...action.payload],
+        searchResults: [...filteredPayload],
         isSearching: false,
         searchError: null,
       };

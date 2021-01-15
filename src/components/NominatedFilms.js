@@ -11,6 +11,8 @@ function NominatedFilms() {
     dispatch(getLocalStorage("nominatedFilms"));
   }, []);
 
+  console.log(nominatedFilms);
+
   return (
     <div className="nominatedFilms-wrapper">
       <p>Your Nominations</p>
