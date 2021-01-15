@@ -16,7 +16,7 @@ function FilmCard({ film }) {
   return (
     <div className="filmCard-wrapper">
       <img src={film.Poster} alt={`Poster for ${film.Title}`} />
-      <h3>{film.Title}</h3>
+      <h3>{`${film.Title} (${film.Year})`}</h3>
       {/* displays appropriate button if/not nominated */}
       {film.Nominated === false ? (
         <button onClick={() => handleNomination(film)}>+</button>

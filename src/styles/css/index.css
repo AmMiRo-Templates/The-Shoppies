@@ -169,10 +169,6 @@ a {
   height: 85vh;
   overflow: auto;
 }
-.content-wrapper .left-content .notification {
-  margin: auto;
-  padding: 2rem;
-}
 .header-wrapper {
   display: flex;
   flex-wrap: nowrap;
@@ -235,6 +231,7 @@ a {
   background-color: #a68655;
   color: #333;
   text-decoration: none;
+  font-size: 1.8rem;
   width: 10rem;
   min-width: 10rem;
   height: 4rem;
@@ -277,6 +274,18 @@ a {
   justify-content: flex-start;
   align-items: center;
   margin: auto;
+}
+.congrats-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto;
+}
+.congrats-wrapper h2 {
+  margin: 2rem;
+  text-align: center;
 }
 .nominatedFilms-wrapper {
   display: flex;
@@ -331,6 +340,7 @@ a {
   background-color: #ffffff;
   color: #333;
   text-decoration: none;
+  font-size: 1.8rem;
   width: 3rem;
   min-width: 3rem;
   height: 3rem;

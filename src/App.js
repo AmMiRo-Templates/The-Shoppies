@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import SearchForm from "./components/SearchForm";
 import SearchResults from "./components/SearchResults";
 import NominatedFilms from "./components/NominatedFilms";
+import CongratsBanner from "./components/CongratsBanner";
 import { useSelector } from "react-redux";
 
 function App() {
@@ -20,10 +21,7 @@ function App() {
               <SearchResults />
             </>
           ) : (
-            <h2 className="notification">
-              You have reached your maximum number of nominations. To nominate
-              another film, you must remove a current nomination.
-            </h2>
+            <CongratsBanner />
           )}
         </div>
         <NominatedFilms />
