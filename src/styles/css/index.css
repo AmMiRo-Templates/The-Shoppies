@@ -173,10 +173,13 @@ a {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   background-color: #dcd0c0;
   height: 10vh;
+}
+.header-wrapper img {
+  height: 4.5rem;
 }
 .header-wrapper h1 {
   color: #333;
