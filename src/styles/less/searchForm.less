@@ -1,0 +1,25 @@
+.searchForm-wrapper {
+  .flexbox(nowrap, row, space-around, center);
+
+  form {
+    .flexbox(nowrap, column, space-around, center);
+    margin: 1rem;
+
+    .input-container {
+      .flexbox(nowrap, row, space-aroud, center);
+      label {
+        font-size: 2.4rem;
+        color: @dark-text;
+        margin: 0.5rem;
+      } // closes label
+
+      input {
+        .form-field;
+      } // closes input
+    } // closes input-container
+
+    button {
+      .buttons(@secondary-dark, @dark-text, 4rem, 10rem);
+    } // closes button
+  } // closes form
+} // closes searchForm-wrapper
