@@ -13,8 +13,6 @@ export const getFilms = (title) => async (dispatch) => {
       `http://www.omdbapi.com/?s=${title}&type=movie&page=5&apikey=7afcb2e0`
     );
 
-    console.log("response", res.data);
-
     if (res.data.Response === "True") {
       const formattedResponse = res.data.Search.map(
         (film) => (film = { ...film, Nominated: false })

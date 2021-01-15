@@ -48,13 +48,17 @@ export const filmsReducer = (state = initialState, action) => {
 
     //   nominate films
     case NOMINATE_FILM:
-      const filteredFilms = state.searchResults.filter(
+      const filteredSearchResults = state.searchResults.filter(
+        (film) => film.imdbID !== action.payload.imdbID
+      );
+
+      const filteredNominations = state.nominatedFilms.filter(
         (film) => film.imdbID !== action.payload.imdbID
       );
       return {
         ...state,
-        searchResults: [...filteredFilms],
-        nominatedFilms: [...state.nominatedFilms, action.payload],
+        searchResults: [...filteredSearchResults],
+        nominatedFilms: [...filteredNominations, action.payload],
         nominationsComplete:
           state.nominatedFilms.length + 1 === state.maxNominations
             ? true

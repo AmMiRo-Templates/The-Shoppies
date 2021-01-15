@@ -15,6 +15,7 @@ function App() {
       <Header />
       <div className="content-wrapper">
         <div className="left-content">
+          {/* displays search components or banner if 5 nominations reached */}
           {nominationsComplete === false ? (
             <>
               <SearchForm />

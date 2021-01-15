@@ -6,13 +6,11 @@ function SearchResults() {
   const searchResults = useSelector((state) => state.searchResults);
   const searchError = useSelector((state) => state.searchError);
 
-  console.log(searchError);
-  console.log(searchResults);
-
   return (
     <div className="film-list-wrapper">
       <p>Search Results</p>
       <div className="films-container">
+        {/* displays error message if one was recieved from get request */}
         {searchError !== null ? (
           <>
             <h2>{searchError}</h2> <h2>Try another search.</h2>
