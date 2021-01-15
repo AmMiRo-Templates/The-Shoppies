@@ -1,9 +1,15 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { getLocalStorage } from "../store/films/filmsActions";
 import FilmCard from "./FilmCard";
 
 function NominatedFilms() {
+  const dispatch = useDispatch();
   const nominatedFilms = useSelector((state) => state.nominatedFilms);
+
+  useEffect(() => {
+    dispatch(getLocalStorage("nominatedFilms"));
+  }, []);
 
   return (
     <div className="nominatedFilms-wrapper">

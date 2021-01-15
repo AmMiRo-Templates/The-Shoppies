@@ -5,6 +5,7 @@ import {
   SEARCHING_FILMS_START,
   SEARCHING_FILMS_SUCCESS,
   SEARCHING_FILMS_TITLE_ERROR,
+  USE_LOCAL_STORAGE,
 } from "./filmsActions";
 
 const initialState = {
@@ -74,6 +75,14 @@ export const filmsReducer = (state = initialState, action) => {
         ),
         nominationsComplete:
           state.nominatedFilms.length - 1 < state.maxNominations ? false : true,
+      };
+
+    // use local storage
+    case USE_LOCAL_STORAGE:
+      const storageValue = action.payload ? action.payload : [];
+      return {
+        ...state,
+        nominatedFilms: storageValue,
       };
 
     //   default

@@ -32,6 +32,7 @@ export const getFilms = (title) => async (dispatch) => {
 export const NOMINATE_FILM = "NOMINATE_FILM";
 export const nominateFilm = (film) => (dispatch) => {
   film.Nominated = true;
+
   dispatch({ type: NOMINATE_FILM, payload: film });
 };
 
@@ -39,4 +40,11 @@ export const nominateFilm = (film) => (dispatch) => {
 export const REMOVE_NOMINATION = "REMOVE_NOMINATION";
 export const removeNomination = (filmId) => (dispatch) => {
   dispatch({ type: REMOVE_NOMINATION, payload: filmId });
+};
+
+// get nominated films from local storage
+export const USE_LOCAL_STORAGE = "USE_LOCAL_STORAGE";
+export const getLocalStorage = (key) => (dispatch) => {
+  const item = JSON.parse(window.localStorage.getItem(key));
+  dispatch({ type: USE_LOCAL_STORAGE, payload: item });
 };
