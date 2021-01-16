@@ -10,7 +10,7 @@ export const getFilms = (title) => async (dispatch) => {
 
   try {
     const res = await axios.get(
-      `http://www.omdbapi.com/?s=${title}&type=movie&page=5&apikey=7afcb2e0`
+      `https://www.omdbapi.com/?s=${title}&type=movie&page=5&apikey=7afcb2e0`
     );
 
     console.log("api response", res);
