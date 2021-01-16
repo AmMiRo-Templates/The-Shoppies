@@ -22,11 +22,13 @@ export const filmsReducer = (state = initialState, action) => {
   switch (action.type) {
     //   search films
     case SEARCHING_FILMS_START:
+      console.log("in start");
       return {
         ...state,
         isSearching: true,
       };
     case SEARCHING_FILMS_SUCCESS:
+      console.log("in success");
       const nomineeIds = new Set();
       state.nominatedFilms.forEach((film) => nomineeIds.add(film.imdbID));
       const filteredPayload = action.payload.filter(
@@ -39,12 +41,14 @@ export const filmsReducer = (state = initialState, action) => {
         searchError: null,
       };
     case SEARCHING_FILMS_FAILURE:
+      console.log("in failure");
       return {
         ...state,
         error: action.payload,
         isSearching: false,
       };
     case SEARCHING_FILMS_TITLE_ERROR:
+      console.log("in search failure");
       return {
         ...state,
         searchResults: [],
