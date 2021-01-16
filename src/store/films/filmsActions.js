@@ -13,6 +13,8 @@ export const getFilms = (title) => async (dispatch) => {
       `http://www.omdbapi.com/?s=${title}&type=movie&page=5&apikey=7afcb2e0`
     );
 
+    console.log("api response", res);
+
     if (res.data.Response === "True") {
       const formattedResponse = res.data.Search.map(
         (film) => (film = { ...film, Nominated: false })
@@ -20,10 +22,10 @@ export const getFilms = (title) => async (dispatch) => {
 
       dispatch({ type: SEARCHING_FILMS_SUCCESS, payload: formattedResponse });
     } else if (res.data.Response === "False") {
-      console.log("returned error", res.data.Error);
       dispatch({ type: SEARCHING_FILMS_TITLE_ERROR, payload: res.data.Error });
     }
   } catch (err) {
+    console.log("error", err);
     dispatch({ type: SEARCHING_FILMS_FAILURE, payload: err });
   }
 };
